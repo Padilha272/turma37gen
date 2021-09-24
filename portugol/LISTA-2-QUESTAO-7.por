@@ -12,7 +12,7 @@ programa
 
 		se(altura >0 e base>0){
 
-			area=mat.arredondar((base*altura)/2,2)
+			area=mat.arredondar(((base*altura)/2),2)
 			escreva("O valor da área é: ",area," metros quadrados")
 		}
 		senao{
@@ -26,7 +26,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 238; 
+ * @POSICAO-CURSOR = 351; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
