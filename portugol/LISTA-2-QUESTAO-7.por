@@ -1,6 +1,6 @@
 programa
 {
-	inclua biblioteca Matematica -->mat
+	inclua biblioteca Matematica -->mat
 	
 	funcao inicio()
 	{
@@ -10,7 +10,7 @@ programa
 		escreva("Digite o valor da base em metros ")
 		leia(base)
 
-		se(altura >=0 e base>=0){
+		se(altura >0 e base>0){
 
 			area=mat.arredondar((base*altura)/2,2)
 			escreva("O valor da área é: ",area," metros quadrados")
@@ -26,7 +26,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 209; 
+ * @POSICAO-CURSOR = 238; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
