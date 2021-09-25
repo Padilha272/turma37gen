@@ -9,15 +9,21 @@ programa
 		leia(c)
 		escreva("Digite o seu total de horas trabalhadas: ")
 		leia(N)
-		salario=N*10
-		se (N>50){
+		
+		se(N<=50) {
+			salario=N*10
+			escreva("O valor do sálario é: ",salario," R$")
+		}
+		senao {
+			salario=500.00
 			E=(N-50)
 			salarioExtra=salario+(E*20)
-			escreva("o seu salário é: ",salario," R$")
-			escreva("o seu salário com o extra é: ",salarioExtra," R$")
-		}
-		senao{
-			escreva("o seu salário é: ",salario," R$")
+			escreva("O valor do salário é: ",salario," R$")
+			escreva("\nVocê trabalou ",E," horas extras, totalizando ",(E*20)," R$")
+			escreva("\nO valor do salário com a(s) hora(s) extra(s) é: ", salarioExtra," R$")
+			
+			
+			
 		}
 	}
 }
@@ -26,7 +32,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 50; 
+ * @POSICAO-CURSOR = 472; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
