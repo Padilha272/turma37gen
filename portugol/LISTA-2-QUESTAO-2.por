@@ -19,9 +19,7 @@ programa
 			E=(N-50)
 			salarioExtra=salario+(E*20)
 			escreva("O valor do salário é: ",salario," R$")
-			escreva("\nVocê trabalou ",E," horas extras, totalizando ",(E*20)," R$")
-			escreva("\nO valor do salário com a(s) hora(s) extra(s) é: ", salarioExtra," R$")
-			
+			escreva("\nO valor do salário extra é: ", salarioExtra," R$")
 			
 			
 		}
@@ -32,7 +30,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 472; 
+ * @POSICAO-CURSOR = 32; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
