@@ -28,15 +28,15 @@ d) percentual de pessoas com salário até R$100,00.*/
 			percentual=percentual+1
 		}
 		}
-				
-		media = (total/pessoas)
-		mfilhos=(tfilhos/pessoas)
-		p=(percentual/pessoas)
-		escreva("\nA média de salário é: "+media +"R$")
-		escreva("\nA média de filhos da população é : "+mfilhos)
-		escreva("\nO maior salário foi: "+maior+"R$")
-		escreva("\n O percentual de pessoas que recebem até de 100R$ é igual a: "+(p*100)+"%")
-		
+			
+			media = (total/pessoas)
+			mfilhos=(tfilhos/pessoas)
+			p=(percentual/pessoas)
+			escreva("\nA média de salário é: "+media +"R$")
+			escreva("\nA média de filhos da população é : "+mfilhos)
+			escreva("\nO maior salário foi: "+maior+"R$")
+			escreva("\n O percentual de pessoas que recebem até de 100R$ é igual a: "+(p*100)+"%")
+			
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -44,7 +44,7 @@ d) percentual de pessoas com salário até R$100,00.*/
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 308; 
+ * @POSICAO-CURSOR = 848; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
