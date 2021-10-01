@@ -3,12 +3,9 @@ programa
 	
 	funcao inicio()
 	{
-		cadeia produtos[3] = {"MOUSE","TECLADO","MONITOR"}
-		cadeia produtosc[3] ={"null","null","null"}
-		cadeia codigo[3] = {"G6-0","G6-1","G6-2"}
-		cadeia codigoc[3]={"null","null","null"}
-		real valor[3] = {50.0,150.0,1500.0}
-		real valorc[3] = {0.00,0.0,0.00}
+		cadeia produtos[3] = {"MOUSE","TECLADO","MONITOR"}	
+		cadeia codigo[3] = {"G6-0","G6-1","G6-2"}		
+		real valor[3] = {50.0,150.0,1500.0}		
 		inteiro estoque[3] = {10,10,10}
 		inteiro carrinho[3] = {0,0,0}
 		caracter opcao
@@ -63,10 +60,7 @@ programa
 			escreva("\n\nDIGITE O ÚLTIMO NÚMERO DO CÓDIGO: ")
 			leia(i)
 			escreva( codigo[i]+" |"+produtos[i]+" |R$"+valor[i])
-			codigoc[i]=codigo[i]
-			produtosc[i]=produtos[i]
-			valorc[i]=valor[i]
-			escreva("\nDIGITE A QUANTIDADE: ")
+			escreva("\nDIGITE A QUANTIDADE QUE GOSTARIA COMPRAR: ")
 			leia(quantidade)
 		 	
 		 	se(quantidade>estoque[i]){
@@ -87,8 +81,8 @@ programa
 			escreva("\n -------------------  \n")
 			escreva("\n CARRINHO DE COMPRAS  \n")
 			para(i=0;i<3;i++){
-				se(codigoc[i]!="null" e produtosc[i]!="null" e valorc[i]!=0)
-			escreva("\n"+codigoc[i]+"---"+produtosc[i]+"---"+valorc[i]+"---"+carrinho[i])
+				se(carrinho[i]!=0)
+			escreva("\n"+codigo[i]+"---"+produtos[i]+"---"+valor[i]+"---"+carrinho[i])
 			}
 			escreva("\n -------------------   \n")
 			escreva("\nVALOR ACUMULADO NO CARRINHO:  RS "+valorTotalCompra+"\n")
@@ -176,7 +170,7 @@ valorComImposto = valorTotalCompra + (valorTotalCompra * 9)/100
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2871; 
+ * @POSICAO-CURSOR = 2447; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
