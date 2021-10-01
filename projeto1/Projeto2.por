@@ -4,14 +4,25 @@ programa
 	funcao inicio()
 	{
 		cadeia produtos[3] = {"MOUSE","TECLADO","MONITOR"}
+		cadeia produtosc[3] ={"null","null","null"}
 		cadeia codigo[3] = {"G6-0","G6-1","G6-2"}
+		cadeia codigoc[3]={"null","null","null"}
 		real valor[3] = {50.0,150.0,1500.0}
+		real valorc[3] = {0.00,0.0,0.00}
 		inteiro estoque[3] = {10,10,10}
 		inteiro carrinho[3] = {0,0,0}
 		caracter opcao
 		inteiro i=0,quantidade=0
-		inteiro valorTotalCompra=0
-		
+		inteiro formaPagamento = 0
+		real valorTotalCompra = 0.0
+		real valorParcelado = 0.0
+		real valorComImposto = 0.0
+		real valorComDesconto = 0.0
+		caracter respostaEtapaPagamento 
+		caracter respostaParcelas 
+		caracter proximoPasso
+		caracter respostaIndecisa
+		real valorComImpostoParcela =0.0
 		
 		escreva(" ______________________________________________\n")
 		escreva("| $   $                                  $   $ |\n")
@@ -52,6 +63,9 @@ programa
 			escreva("\n\nDIGITE O ÚLTIMO NÚMERO DO CÓDIGO: ")
 			leia(i)
 			escreva( codigo[i]+" |"+produtos[i]+" |R$"+valor[i])
+			codigoc[i]=codigo[i]
+			produtosc[i]=produtos[i]
+			valorc[i]=valor[i]
 			escreva("\nDIGITE A QUANTIDADE: ")
 			leia(quantidade)
 		 	
@@ -59,10 +73,11 @@ programa
 		 		escreva("VALOR INVÁLIDO, ESCOLHA OUTRO PRODUTO")		 		
 		 	}senao {
 		 		estoque[i]=estoque[i]-quantidade
+		 		carrinho[i]=quantidade
 		 		valorTotalCompra= valorTotalCompra+(quantidade*valor[i])
 		 	}
 		 	
-						 	
+			escreva("\nCOMPRA EFETUADA COM SUCESSO!")			 	
 		 	escreva("\nQUER CONTINUAR COMPRANDO ? s/n ")
 			leia(opcao)
 			limpa()
@@ -71,6 +86,10 @@ programa
 			}
 			escreva("\n -------------------  \n")
 			escreva("\n CARRINHO DE COMPRAS  \n")
+			para(i=0;i<3;i++){
+				se(codigoc[i]!="null" e produtosc[i]!="null" e valorc[i]!=0)
+			escreva("\n"+codigoc[i]+"---"+produtosc[i]+"---"+valorc[i]+"---"+carrinho[i])
+			}
 			escreva("\n -------------------   \n")
 			escreva("\nVALOR ACUMULADO NO CARRINHO:  RS "+valorTotalCompra+"\n")
 			escreva("\ncódigo " +     "produto "	 +   " valor "      +  " estoque\n ")
@@ -78,6 +97,77 @@ programa
 			
 			escreva(codigo[i]+ "  - " +produtos[i]+ " - "  +valor[i]+  " -  " +estoque[i]+  " \n")
 			}
+
+
+
+
+valorComImposto = valorTotalCompra + (valorTotalCompra * 9)/100
+		valorTotalCompra = valorComImposto
+		
+		escreva("\nDIGITE 1 PARA PAGAMANETO À VISTA")
+		escreva("\nDIGITE 2 PARA PAGAMENTO EM CARTÃO")
+		leia(formaPagamento)
+		se(formaPagamento == 1){
+			valorComDesconto = valorTotalCompra - (valorTotalCompra * 10)/100
+			valorTotalCompra = valorComDesconto
+			escreva("\nVALOR TOTAL DA SUA COMPRA: ", valorTotalCompra)
+			escreva("\nDESEJA GERAR O BOLETO PARA O PAGAMENTO? ")
+			leia(respostaEtapaPagamento)
+			se(respostaEtapaPagamento != 's' ou respostaEtapaPagamento != 'S' ou respostaEtapaPagamento != 'n' ou respostaEtapaPagamento != 'N'){
+					escreva("DESCULPE, OPÇÃO INVÁLIDA!")
+			}senao se(respostaEtapaPagamento == 's' ou respostaEtapaPagamento == 'S'){
+				escreva("NUMERO DO BOLETO: 365468456146846464")
+				
+			}senao se(respostaEtapaPagamento == 'n' ou respostaEtapaPagamento == 'N'){
+				escreva("DESEJA VOLTAR AO MENU PRINCIPAL?")
+				//condição
+			}
+		}		
+		senao se(formaPagamento == 2){
+			escreva("GOSTARIA DE PARCELAR?")
+			leia(respostaParcelas)
+			se(respostaParcelas == 's' ou respostaParcelas == 'S'){
+				escreva("\nSUA COMPRA SERÁ PARCELADA EM 2X")
+					valorComImpostoParcela = valorTotalCompra + (valorTotalCompra * 15)/100
+					valorParcelado = valorComImpostoParcela / 2
+					escreva("\nVALOR TOTAL DA SUA COMPRA: ", valorTotalCompra)
+			}
+			senao se(respostaParcelas != 's' ou respostaParcelas != 'S' ou respostaParcelas != 'n' ou respostaParcelas != 'N'){
+					escreva("DESCULPE, OPÇÃO INVÁLIDA!")
+					
+			}senao se(respostaParcelas == 'n' ou respostaParcelas == 'N'){
+				valorTotalCompra = valorTotalCompra + (valorTotalCompra * 10)/100
+				escreva("\nVALOR TOTAL DA COMPRA: ", valorTotalCompra)
+				escreva("PROSSEGUIR PARA CONLUSÃO DE PAGAMENTO E EMISSÃO DE NOTA FISCAL?")
+				leia(proximoPasso)
+				se(proximoPasso == 's' ou proximoPasso == 'S'){
+					escreva("\nCOMPRA REALIZADA COM SUCESSO!	")
+					escreva("NOTA FISCAL 2165451325156432")
+				}
+				senao se(proximoPasso != 's' ou proximoPasso != 'S' ou proximoPasso != 'n' ou proximoPasso != 'N'){
+					escreva("\nDESCULPE, OPÇÃO INVÁLIDA!")
+				}
+				senao{
+					escreva("\nDESEJA VOLTAR AO MENU DE COMPRAS? ")	
+					leia(respostaIndecisa)
+					se(respostaIndecisa == 's' ou respostaIndecisa == 's'){
+						escreva("NÃO FAÇO IDEIA DO QUE FAZER AQUI!!")
+					}
+				}
+			}
+		}
+	
+	escreva("\nVALOR TOTAL DA COMPRA: ", valorTotalCompra)
+	escreva("\nVALOR DA COMPRA COM IMPOSTO: ", valorComImposto)
+
+
+
+
+
+
+
+
+			
 		}
 		
 }
@@ -86,7 +176,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2461; 
+ * @POSICAO-CURSOR = 2990; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
