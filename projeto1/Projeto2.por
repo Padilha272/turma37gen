@@ -73,7 +73,7 @@ programa
 		 		escreva("VALOR INVÁLIDO, ESCOLHA OUTRO PRODUTO")		 		
 		 	}senao {
 		 		estoque[i]=estoque[i]-quantidade
-		 		carrinho[i]=quantidade
+		 		carrinho[i]=carrinho[i]+quantidade
 		 		valorTotalCompra= valorTotalCompra+(quantidade*valor[i])
 		 	}
 		 	
@@ -176,7 +176,7 @@ valorComImposto = valorTotalCompra + (valorTotalCompra * 9)/100
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2990; 
+ * @POSICAO-CURSOR = 2871; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
