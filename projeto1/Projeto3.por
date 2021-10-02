@@ -3,9 +3,12 @@ programa
 	
 	funcao inicio()
 	{
-		cadeia produtos[3] = {"MOUSE","TECLADO","MONITOR"}	
-		cadeia codigo[3] = {"G6-0","G6-1","G6-2"}		
-		real valor[3] = {50.0,150.0,1500.0}		
+		cadeia produtos[3] = {"MOUSE","TECLADO","MONITOR"}
+		cadeia produtosc[3] = {"","",""}	
+		cadeia codigo[3] = {"G6-0","G6-1","G6-2"}
+		cadeia codigoc[3] = {"","",""}		
+		real valor[3] = {50.0,150.0,1500.0}
+		real valorc[3] = {0.00,0.00,0.00}		
 		inteiro estoque[3] = {10,10,10}
 		inteiro carrinho[3] = {0,0,0}
 		caracter opcao
@@ -47,7 +50,12 @@ programa
 		escreva("\n\nDESEJA CONTINUAR COMPRANDO? DIGITE S OU N:")
 		leia(opcao)
 		
-		se(opcao == 'S' ou opcao == 's'){
+		se(opcao == 'N' ou opcao == 'n'){
+			escreva("\n >>>  OBRIGADA PELA VISITA. VOLTE SEMPRE! <<< ")
+			
+		}
+		
+		senao se (opcao =='S' ou opcao == 's'){
 			limpa()
 			escreva("\n $ $ $ VAMOS GASTAR? $ $ $")
 			
@@ -62,7 +70,9 @@ programa
 			escreva( codigo[i]+" |"+produtos[i]+" |R$"+valor[i])
 			escreva("\nDIGITE A QUANTIDADE QUE GOSTARIA COMPRAR: ")
 			leia(quantidade)
-		 	
+			codigoc[i]=codigo[i]
+		 	produtosc[i]=produtos[i]
+		 	valorc[i]=valor[i]
 		 	se(quantidade>=estoque[i]){
 		 		escreva("VALOR INVÁLIDO, ESCOLHA OUTRO PRODUTO")		 		
 		 	}senao {
@@ -71,18 +81,25 @@ programa
 		 		valorTotalCompra= valorTotalCompra+(quantidade*valor[i])
 		 	}
 		 	
-			escreva("\nCOMPRA EFETUADA COM SUCESSO!")			 	
+			escreva("\nITEM ADCIONADO AO CARRINHO")
+
+			para(i=0;i<3;i++){
+				se(carrinho[i]!=0)
+			escreva("\n-------------------------CARRINHO--------------------------\n")
+			escreva("\n"+codigo[i]+"---"+produtos[i]+"---"+valor[i]+"---quantidade: x"+carrinho[i])
+			}
 		 	escreva("\nQUER CONTINUAR COMPRANDO ? s/n ")
 			leia(opcao)
 			limpa()
 			}
 			
-			
+			}
 			escreva("\n -------------------  \n")
 			escreva("\n CARRINHO DE COMPRAS  \n")
 			para(i=0;i<3;i++){
-				se(carrinho[i]!=0)
-			escreva("\n"+codigo[i]+"---"+produtos[i]+"---"+valor[i]+"---"+carrinho[i])
+				se(carrinho[i]!=0){
+			escreva("\n"+codigoc[i]+"---"+produtosc[i]+"---"+valorc[i]+"---"+carrinho[i])
+				}
 			}
 			escreva("\n -------------------   \n")
 			escreva("\nVALOR ACUMULADO NO CARRINHO:  RS "+valorTotalCompra+"\n")
@@ -91,6 +108,8 @@ programa
 			
 			escreva(codigo[i]+ "  - " +produtos[i]+ " - "  +valor[i]+  " -  " +estoque[i]+  " \n")
 			}
+
+
 
 
 valorComImposto = valorTotalCompra + (valorTotalCompra * 9)/100
@@ -153,14 +172,11 @@ valorComImposto = valorTotalCompra + (valorTotalCompra * 9)/100
 	escreva("\nVALOR DA COMPRA COM IMPOSTO: ", valorComImposto)
 
 
-			
-		}
-		
-		senao {
-			
-          escreva("\n >>>  OBRIGADA PELA VISITA. VOLTE SEMPRE! <<< ")
 
-		}
+
+
+
+
 
 			
 		}
@@ -171,7 +187,7 @@ valorComImposto = valorTotalCompra + (valorTotalCompra * 9)/100
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 369; 
+ * @POSICAO-CURSOR = 3160; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
