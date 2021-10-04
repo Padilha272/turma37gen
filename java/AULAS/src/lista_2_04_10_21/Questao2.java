@@ -53,7 +53,7 @@ public static void main(String[]args) {
 			
 		System.out.println("O maior número é "+d);
 		System.out.println("O menor número é "+e);
-		System.out.println("O do meio é:"+f);
+		System.out.println("O número do meio é:"+f);
 		System.out.println(e+" "+f+" "+d);
 	}
 }

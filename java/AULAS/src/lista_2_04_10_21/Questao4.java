@@ -13,17 +13,24 @@ public class Questao4 {
 		System.out.println("Digite um número");
 		n = leia.nextInt();
 		
-		if(n==0) {
+		if(n==0 & n>0) {
 			
 			System.out.println("O número é zero, este valor é considerado neutro");
 		}
-		else if(n%2!=0) {
+		else if(n%2!=0 && n>0) {
 			valor=Math.pow(n, 2);
 			System.out.println("O número é impar, o seu quadrado é igual a: "+valor);
 		}
-		else  {
+		else if(n%2==0 && n>0) {
 			valor=Math.sqrt(n);
 			System.out.println("O número é par, a sua raiz quadrada é igual a: "+valor);
+		}
+		else if(n==0){
+			
+			System.out.println("o Número é neutro");
+		}
+		else if(n<0){
+			System.out.println("O número é negativo");
 		}
 		
 	}
