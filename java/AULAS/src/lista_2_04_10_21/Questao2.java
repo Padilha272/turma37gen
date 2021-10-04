@@ -11,49 +11,34 @@ public static void main(String[]args) {
 		
 		Scanner leia = new Scanner(System.in);
 		int a,b,c;
-		int d=0,e=0,f=0;
+		int d;
 		
 		System.out.println("Digite o primeiro");
 		a = leia.nextInt();
-		if (a>=d) {
-			d=a;
-		}
-		e=d;
-		if(a<=e) {
-			e=a;
-		}
 		System.out.println("Digite o segundo");
 		b = leia.nextInt();
-		if (b>=d) {
-			d=b;
-		}if(b<=e) {
-			e=b;
-		}
+		
 		System.out.println("Digite o terceiro");
 		c = leia.nextInt();
-		if (c>=d) {
-			d=c;
+		
+		if(a>b) {
+			d = a;
+			a=b;
+			b=d;
 		}
-		if(c<=e) {
-			e=c;
+		if(b>c) {
+			d = b;
+			b=c;
+			c=d;
 		}
-		if(a<d && a>e){
-			f=a;
-			
-		}
-		if(b<d && b>e){
-			f=b;
-			
-		}
-		if(c<d && c>e){
-			f=c;
-			
+		if(a>b) {
+			d= a;
+			a=b;
+			b=d;
 		}
 		
 			
-		System.out.println("O maior número é "+d);
-		System.out.println("O menor número é "+e);
-		System.out.println("O número do meio é:"+f);
-		System.out.println(e+" "+f+" "+d);
+		
+		System.out.println(a+" "+b+" "+c);
 	}
 }
