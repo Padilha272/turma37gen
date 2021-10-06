@@ -24,11 +24,11 @@ public class Questao4 {
 			}
 			
 			for(int x=0;x<3;x++) {
-				System.out.println();
 				for(int y=0;y<3;y++){
 					System.out.print("["+matriz[x][y]+"]\t");
 					
 				}
+				System.out.println();
 			}
 			System.out.println();
 			System.out.println("Soma do total dos valores: "+total);
