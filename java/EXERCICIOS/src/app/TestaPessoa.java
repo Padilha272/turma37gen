@@ -1,21 +1,26 @@
 package app;
 
-import entities.Coordenador;
-import entities.Funcionario;
+import java.util.Scanner;
+
+
 import entities.Pessoa;
 
 public class TestaPessoa {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Pessoa jessica = new Pessoa("jessica",555);
-		Funcionario pedro = new Funcionario("Pedro",222,"TI");
-		Pessoa maria = new Funcionario("maria",333,"Desenvolvimento");
-		Pessoa jose = new Coordenador("jose",444,"CC");
-		System.out.println(jessica.getMatricula());
-		System.out.println(pedro.getDepartamento());
+		
+		Scanner leia = new Scanner(System.in);
+		
+		Pessoa maria = new Pessoa("maria",333,18);
+		
+		
 		System.out.println(maria.getMatricula());
-		System.out.println(jose.getMatricula());
+		
+		System.out.println(maria.getNome()+" digite a sua idade: ");
+		int idade=leia.nextInt();
+		
+		maria.voto(idade);
 	}
 
 }
