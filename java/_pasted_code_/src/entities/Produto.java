@@ -1,22 +1,16 @@
 package entities;
 
-public class Produto {
+	public class Produto {
 	
-	public String produto;
-	public String codigo;
-	double valor;
-	int estoque;
+	private String produto;
+	private String codigo;
+	private double valor;
+	private int estoque;
 	
 	
 	//Construtor
 	
-	public Produto(String produto, String codigo, double valor, int estoque) {
-		super();
-		this.produto = produto;
-		this.codigo = codigo;
-		this.valor = valor;
-		this.estoque=estoque;
-	}
+	
 
 	
 	
@@ -27,12 +21,22 @@ public class Produto {
 
 
 
-	public void setProduto(String produto) {
+	public Produto(String produto, String codigo, double valor, int estoque) {
+		super();
 		this.produto = produto;
+		this.codigo = codigo;
+		this.valor = valor;
+		this.estoque = estoque;
 	}
 
 
 
+
+
+
+	
+	
+	
 	public String getCodigo() {
 		return codigo;
 	}
@@ -69,10 +73,13 @@ public class Produto {
 
 
 
-	
-	
-	
-	public void adcionar(int quantidade) {
+	public void setProduto(String produto) {
+		this.produto = produto;
+	}
+
+
+
+	public void comprar(int quantidade) {
 		if(quantidade<=estoque && quantidade>0 && estoque>=0) {
 			estoque=estoque - quantidade;
 			System.out.println("Compra realizada com sucesso!");
@@ -85,5 +92,22 @@ public class Produto {
 		}
 		
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Produto [produto=" + produto + ", codigo=" + codigo + ", valor=" + valor + ", estoque=" + estoque + "]";
+	}
+
+
+
+	public Integer getKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
 
 }

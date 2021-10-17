@@ -17,6 +17,8 @@ public class Carrinho extends Produto {
 		this.valorCarrinho = valorCarrinho;
 	}
 
+	
+
 	public int getEstoqueCarrinho() {
 		return estoqueCarrinho;
 	}
@@ -34,25 +36,24 @@ public class Carrinho extends Produto {
 	}
 	
 	
-	public void compra(int quantidade) {
+	public void compra(int quantidade,double valor,int estoque) {
 		
-			this.estoqueCarrinho = quantidade;
-			this.valorCarrinho = quantidade*super.valor;
+		//if(quantidade<= estoque && quantidade>0 && estoque>=0)  {
+			System.out.println("OPERAÇÃO REALIZADA COM SUCESSO");
+			estoqueCarrinho = estoqueCarrinho+quantidade;
+			valorCarrinho = valorCarrinho+(quantidade*valor);
 			
-     System.out.println("Carrinho: "+super.getProduto()+super.getCodigo()+super.getValor()+quantidade);
+			System.out.println(" Carrinho: " + estoqueCarrinho + "PRODUTOS " + "VALOR TOTAL DO CARRINHO " + valorCarrinho);
+		//}
+		//else if (quantidade > estoque){
 			
-		} 
-	}
+			//System.out.println("sem sucesso");
+			
+			//System.out.println(estoque);
+			
+			
+		//}
+			
+	} 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+}
