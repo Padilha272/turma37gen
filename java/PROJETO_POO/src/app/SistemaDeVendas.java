@@ -39,7 +39,7 @@ public class SistemaDeVendas {
 			System.out.print(" ______________________________________________\n");
 			System.out.print("| $   $                                  $   $ |\n");
 			System.out.print("|   $        SISTEMA DE VENDAS ONLINE      $   |\n");
-			System.out.print("|               37GEN COMÉRCIOS LTDA           |\n");
+			System.out.print("|               CONTROL SYSTEMS 		         |\n");
 			System.out.print("|_$___$__________________________________$___$_|\n");
 			System.out.print("\n  >>      TUDO QUE VOCÊ PRECISA AQUI       << \n");
 			System.out.print("\n\n");
@@ -51,9 +51,9 @@ public class SistemaDeVendas {
 		}
 
 		Produto p1 = new Produto("MOUSE           ", "G0-0", 20, 10);
-		Produto p2 = new Produto("TECLADO         ", "G6-1 ", 150.00, 20);
-		Produto p3 = new Produto("MONITOR         ", "G6-2 ", 1500.00, 30);
-		Produto p4 = new Produto("CABO USB        ", "G6-3", 20.00, 30);
+		Produto p2 = new Produto("TECLADO         ", "G6-1 ", 150.00, 10);
+		Produto p3 = new Produto("MONITOR         ", "G6-2 ", 1500.00, 10);
+		Produto p4 = new Produto("CABO USB        ", "G6-3", 20.00, 10);
 		Produto p5 = new Produto("FONE DE OUVIDO  ", "G6-4", 50.00, 10);
 		Produto p6 = new Produto("CARREGADOR      ", "G6-5", 40.00, 10);
 		Produto p7 = new Produto("ADAPTADOR       ", "G6-6", 25.00, 10);
