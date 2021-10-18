@@ -24,7 +24,7 @@ public class SistemaDeVendas {
 		double valorComImpostoParcela =0.0;
 		
 		List <Produto> lista = new ArrayList <> ();
-		lista.add(new Produto("MOUSE ","G6-0",20,10));
+		lista.add(new Produto("MOUSE    ","G6-0",20,10));
 		lista.add(new Produto("TECLADO","G6-1",150.00,10));
 		lista.add(new Produto("MONITOR","G6-2",1500.00,10));
 		lista.add(new Produto("CABO USB ","G6-3",20.00,10));
@@ -33,9 +33,17 @@ public class SistemaDeVendas {
 		lista.add(new Produto("ADAPTADOR","G6-6",25.00,10));
 		lista.add(new Produto("PELÍCULA","G6-7",20.00,10));
 		lista.add(new Produto("CABO HDMI","G6-8",40.00,10));
-		lista.add(new Produto("CASE P/ CELULAR","G6-9",30.00,10));
+		lista.add(new Produto("CASE  CELULAR","G6-9",30.00,10));
+			
 		
-			System.out.println("COD     PROD   VLR   ESTOQUE ");
+			System.out.print(" ______________________________________________\n");
+			System.out.print("| $   $                                  $   $ |\n");
+			System.out.print("|   $        SISTEMA DE VENDAS ONLINE      $   |\n");
+			System.out.print("|               37GEN COMÉRCIOS LTDA           |\n");
+			System.out.print("|_$___$__________________________________$___$_|\n");
+			System.out.print("\n  >>      TUDO QUE VOCÊ PRECISA AQUI       << \n");
+			System.out.print("\n\n");
+			System.out.println("COD        PROD                        VALOR          ESTOQUE ");
 		for (Produto p : lista ) {
 			
 			System.out.println(p.toString());
@@ -51,14 +59,14 @@ public class SistemaDeVendas {
 		Produto p7 = new Produto("ADAPTADOR       ", "G6-6", 25.00, 10);
 		Produto p8 = new Produto("PELÍCULA        ", "G6-7", 20.00, 10);
 		Produto p9 = new Produto("CABO HDMI       ", "G6-8", 40.00, 10);
-		Produto p10 = new Produto("CASE P/ CELULAR", "G6-9", 30.00, 10);
+		Produto p10 = new Produto("CASE P/CELULAR", "G6-9", 30.00, 10);
 
 		Carrinho c1 = new Carrinho(null, null, 0, 0, 0, 0);
 
 		String[] produtosc = { "", "", "", "", "", "", "", "", "", "" };
 		double[] valorc = { 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00 };
 		int[] carrinho = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-		String[] codigoc = { "G0-0", "G6-1 ", "G6-1 ", "G6-1 ", "G6-1 ", "G6-1 ", "G6-1 ", "G6-1 ", "G6-1 ", "G6-1 " };
+		String[] codigoc = { "G0-0", "G6-1 ", "G6-2 ", "G6-3 ", "G6-4 ", "G6-5 ", "G6-6 ", "G6-7 ", "G6-8 ", "G6-9 " };
 
 		Produto produtos[] = new Produto[10];
 
@@ -117,17 +125,9 @@ public class SistemaDeVendas {
 					 * produtos[posicao].getEstoque());
 					 */
 
-					
-					
-					
 					for (posicao = 0; posicao < 9; posicao++) {
 						System.out.println(produtos[posicao]);
 					}
-
-					
-					
-					
-					
 					
 					for (posicao = 0; posicao < 10; posicao++) {
 						if (carrinho[posicao] != 0 && valorc[posicao] != 0.00 && produtosc[posicao] != "") {
@@ -153,10 +153,12 @@ public class SistemaDeVendas {
 				if (carrinho[posicao] != 0 && valorc[posicao] != 0.00 && produtosc[posicao] != "") {
 					System.out.print(" ______\n");
 					System.out.print("|_PRODUTO|VALOR UNIT.|QUANTIDADE_|\n");
-					System.out.print("\n" + produtosc[posicao] +"\t" + valorc[posicao] + "\t\t" + carrinho[posicao] + "\n" +c1.getValorCarrinho());
+					System.out.print("\n" + produtosc[posicao] +"\t" + valorc[posicao] + "\t\t" + carrinho[posicao] + "\n");
 				}
 
 			}
+			System.out.println("Valor total do carrinho: " +c1.getValorCarrinho());
+			//FORMA DE PAGAMENTO
 			System.out.print("\n________\n");
 			System.out.print("\nDIGITE 1 PARA PAGAMENTO À VISTA\n");
 			System.out.print("________\n");
