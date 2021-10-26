@@ -1,4 +1,4 @@
-
+#CREATE DATABASE db_empresa
 
 use db_empresa;
 

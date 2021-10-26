@@ -1,3 +1,4 @@
+#CREATE DATABASE db_commerce
 use db_commerce;
 
 Create table tb_produtos(
@@ -19,7 +20,6 @@ SELECT * FROM tb_produtos where preco > 500;
 SELECT * FROM tb_produtos where preco < 500;
 
 update tb_produtos set cor = "Verde" where id = 4;
-
 
 
 

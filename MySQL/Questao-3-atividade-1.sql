@@ -19,5 +19,5 @@ CREATE TABLE tb_matricula(
 
 SELECT * FROM tb_matricula where nota >7;
 SELECT * FROM tb_matricula where nota <7;
-
+SELECT * FROM tb_matricula where nome like "%Ma%";
 update tb_matricula set nota = 7.1 where id =2;
