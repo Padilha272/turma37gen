@@ -1,8 +1,6 @@
 package com.example.blogEclipse.controller;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,9 +32,9 @@ public class PostagemController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Optional<Postagem>> getById(@PathVariable Long id){
+	public ResponseEntity<Postagem> getById(@PathVariable Long id){
 		
-		return ResponseEntity.ok(repository.findById(id));
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 	
 	@GetMapping("/titulo/{titulo}")
