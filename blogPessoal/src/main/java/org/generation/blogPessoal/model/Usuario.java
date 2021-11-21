@@ -21,30 +21,30 @@ import io.swagger.annotations.ApiModelProperty;
 @Table(name = "tb_usuario")
 
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotNull
-	@Size(min = 5 , max = 100)
+	@Size(min = 5, max = 100)
 	private String nome;
-	
+
 	@ApiModelProperty(example = "email@email.com.br")
 	@NotNull
-	@Size(min = 5 , max = 100)
+	@Size(min = 5, max = 100)
 	private String usuario;
-	
+
 	@NotNull
-	@Size(min = 5 , max = 100)
+	@Size(min = 5, max = 100)
 	private String senha;
-	
-	@OneToMany(mappedBy= "usuario" , cascade=CascadeType.REMOVE)
+
+	public String foto;
+
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
-	
-	
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -76,18 +76,21 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	
-	
+
 	public List<Postagem> getPostagem() {
 		return postagem;
 	}
-	
-	
+
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
-	
-	
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
 }
