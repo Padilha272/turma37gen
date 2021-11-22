@@ -10,6 +10,7 @@ import org.generation.blogPessoal.model.Tema;
 import org.generation.blogPessoal.model.UserLogin;
 import org.generation.blogPessoal.model.Usuario;
 import org.generation.blogPessoal.repository.PostagemRepository;
+import org.generation.blogPessoal.repository.UsuarioRepository;
 import org.generation.blogPessoal.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,14 +33,16 @@ import org.springframework.web.server.ResponseStatusException;
 public class UsuarioController {
 
 	@Autowired
-	private UsuarioService usuarioService;
-	private PostagemRepository repository;
+	private UsuarioService service;
+	
+	@Autowired
+	private UsuarioRepository repository;
 	
 	
 	
 	@GetMapping("/all")
 
-	public ResponseEntity<List<Postagem>> getAll() {
+	public ResponseEntity<List<Usuario>> getAll() {
 
 		return ResponseEntity.ok(repository.findAll());
 
@@ -47,7 +50,7 @@ public class UsuarioController {
 
 	@GetMapping("/{id}")
 
-	public ResponseEntity<Postagem> getById(@PathVariable long id) {
+	public ResponseEntity<Usuario> getById(@PathVariable long id) {
 
 		return repository.findById(id)
 
@@ -58,7 +61,7 @@ public class UsuarioController {
 	}
 
 	
-	/*
+	
 	@PutMapping("/atualizar")
 
 	public ResponseEntity<Usuario> putUsuario(@Valid @RequestBody Usuario usuario){		
@@ -70,21 +73,21 @@ public class UsuarioController {
 	                .orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 
 	}
-	*/
+	
 	
 	
 	
 	@PostMapping("/logar")
 	public ResponseEntity<Postagem> Autentication(@RequestBody Optional<UserLogin> user) {
 
-		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
+		return service.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Optional<Usuario>> Post(@RequestBody Usuario usuario) {
 
-		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.cadastrarUsuario(usuario));
+		return ResponseEntity.status(HttpStatus.CREATED).body(service.cadastrarUsuario(usuario));
 	}
 	
 	
