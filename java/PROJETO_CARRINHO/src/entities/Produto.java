@@ -125,6 +125,10 @@ public void compra(int quantidade,double valor,int estoque) {
 			
 			System.out.println(" Carrinho: " + estoqueCarrinho + "PRODUTOS " + "VALOR TOTAL DO CARRINHO " + valorCarrinho);
 		//}
+		
+		/*else if(quantidade>estoque || quantidade <0){
+			System.out.println("Desculpe, impossível realizar a operação");
+		}*/
 	
 }
 	
