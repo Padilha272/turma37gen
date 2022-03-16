@@ -101,7 +101,7 @@ package entities;
 
 
 
-	public void comprar(int quantidade) {
+	public void retirar(int quantidade) {
 		if(quantidade<=estoque && quantidade>0 && estoque>=0) {
 			estoque=estoque - quantidade;
 			System.out.println("Compra realizada com sucesso!");
@@ -123,7 +123,7 @@ public void compra(int quantidade,double valor,int estoque) {
 			estoqueCarrinho = estoqueCarrinho+quantidade;
 			valorCarrinho = valorCarrinho+(quantidade*valor);
 			
-			System.out.println(" Carrinho: " + estoqueCarrinho + "PRODUTOS " + "VALOR TOTAL DO CARRINHO " + valorCarrinho);
+			System.out.println(" Carrinho: " + quantidade + "  PRODUTOS " + "VALOR DO PRODUTO " + quantidade*valor);
 		//}
 		
 		/*else if(quantidade>estoque || quantidade <0){
